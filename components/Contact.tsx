@@ -13,8 +13,8 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "info@ernestconstruction.ng",
-      href: "mailto:info@ernestconstruction.ng",
+      value: "obazeemmanuel2@gmail.com",
+      href: "mailto:obazeemmanuel2@gmail.com",
     },
     {
       icon: Phone,
@@ -141,7 +141,15 @@ export default function Contact() {
             className="bg-white rounded-2xl shadow-2xl p-8 lg:p-10"
           >
             <h3 className="text-2xl font-bold text-primary mb-6">Send Us a Message</h3>
-            <form className="space-y-6">
+            <form 
+              action="https://api.web3forms.com/submit" 
+              method="POST"
+              className="space-y-6"
+            >
+              {/* Web3Forms Access Key */}
+              <input type="hidden" name="access_key" value="d5e73433-4fe8-4795-a2e0-abcdd71de6bf" />
+              <input type="hidden" name="subject" value="New Contact from Ernest Construction Website" />
+              <input type="hidden" name="from_name" value="Ernest Construction Website" />
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name
@@ -202,6 +210,9 @@ export default function Contact() {
               >
                 Send Message
               </motion.button>
+              <p className="text-sm text-gray-500 text-center">
+                Messages will be sent to: <strong>obazeemmanuel2@gmail.com</strong>
+              </p>
             </form>
           </motion.div>
         </div>
