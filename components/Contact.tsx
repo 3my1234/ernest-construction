@@ -78,10 +78,10 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Let's Build <span className="text-accent">Together</span>
+              Let&apos;s Build <span className="text-accent">Together</span>
             </h2>
             <p className="text-xl text-gray-300 mb-12">
-              Ready to start your next construction project? Get in touch with us today and let's create something amazing.
+              Ready to start your next construction project? Get in touch with us today and let&apos;s create something amazing.
             </p>
 
             {/* Contact Information */}
