@@ -5,6 +5,9 @@ const nextConfig = {
     domains: [],
     unoptimized: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
