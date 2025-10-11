@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 
 const galleryImages = [
@@ -39,29 +39,46 @@ const galleryImages = [
 ];
 
 export default function HorizontalGallery() {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-gray-900">
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-transparent to-gray-900 z-10 pointer-events-none" />
-        
+    <section className="py-20 lg:py-32 bg-gray-900 overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8 mb-8">
         <motion.div
-          style={{ x }}
-          className="flex gap-8 px-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
         >
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+            Our Work <span className="text-accent">Gallery</span>
+          </h2>
+          <p className="text-lg text-gray-400">
+            Swipe to explore our stunning projects
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Horizontally Scrollable Container */}
+      <div 
+        ref={scrollRef}
+        className="overflow-x-auto overflow-y-hidden scrollbar-hide px-4 lg:px-8"
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
+        <div className="flex gap-6 pb-4" style={{ width: 'max-content' }}>
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative flex-shrink-0 w-[80vw] md:w-[60vw] lg:w-[40vw] h-[70vh] group"
+              className="relative flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[50vw] lg:w-[35vw] h-[400px] md:h-[500px] group"
             >
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                 <img
@@ -78,9 +95,19 @@ export default function HorizontalGallery() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <div className="text-center mt-6">
+        <p className="text-gray-500 text-sm">← Swipe horizontally to see more →</p>
+      </div>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 }
-
