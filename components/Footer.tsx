@@ -22,9 +22,9 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "https://facebook.com/ernestconstruction" },
-    { name: "Instagram", icon: Instagram, href: "https://instagram.com/ernestconstruction" },
-    { name: "X", icon: Twitter, href: "https://x.com/ernestconstruct" },
+    { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/share/17bbWF63zU/" },
+    { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/j_ernestto?igsh=MXFyeW5jZndzZmNyMQ==" },
+    { name: "X", icon: Twitter, href: "https://x.com/Evans1thARICHA?t=JgOlIWo-P61D3IE9EZbF2w&s=09" },
     {
       name: "TikTok",
       icon: ({ className, size }: { className?: string; size?: number }) => (
