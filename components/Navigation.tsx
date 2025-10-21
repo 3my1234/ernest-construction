@@ -96,22 +96,16 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white shadow-lg"
+            className="md:hidden bg-white shadow-lg overflow-hidden"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-800 font-medium hover:text-accent transition-colors py-2 block"
-                  onClick={(e) => {
-                    setIsMobileMenuOpen(false);
-                    // Smooth scroll to section
-                    const target = document.querySelector(item.href);
-                    if (target) {
-                      e.preventDefault();
-                      target.scrollIntoView({ behavior: 'smooth' });
-                    }
+                  className="text-gray-800 font-medium hover:text-accent transition-colors py-3 block text-lg"
+                  onClick={() => {
+                    setTimeout(() => setIsMobileMenuOpen(false), 100);
                   }}
                 >
                   {item.name}
