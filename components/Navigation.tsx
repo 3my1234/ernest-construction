@@ -25,6 +25,26 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    
+    // Wait for menu to close, then scroll
+    setTimeout(() => {
+      const target = document.querySelector(href);
+      if (target) {
+        const headerOffset = 80;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -69,6 +89,7 @@ export default function Navigation() {
                 }`}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.name}
               </motion.a>
@@ -104,9 +125,7 @@ export default function Navigation() {
                   key={item.name}
                   href={item.href}
                   className="text-gray-800 font-medium hover:text-accent transition-colors py-3 block text-lg"
-                  onClick={() => {
-                    setTimeout(() => setIsMobileMenuOpen(false), 100);
-                  }}
+                  onClick={(e) => handleNavClick(e, item.href)}
                 >
                   {item.name}
                 </a>
