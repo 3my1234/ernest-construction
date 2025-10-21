@@ -103,8 +103,16 @@ export default function Navigation() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-800 font-medium hover:text-accent transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-gray-800 font-medium hover:text-accent transition-colors py-2 block"
+                  onClick={(e) => {
+                    setIsMobileMenuOpen(false);
+                    // Smooth scroll to section
+                    const target = document.querySelector(item.href);
+                    if (target) {
+                      e.preventDefault();
+                      target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   {item.name}
                 </a>

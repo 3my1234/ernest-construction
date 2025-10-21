@@ -13,8 +13,8 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "obazeemmanuel2@gmail.com",
-      href: "mailto:obazeemmanuel2@gmail.com",
+      value: "Johnsonernest20@gmail.com",
+      href: "mailto:Johnsonernest20@gmail.com",
     },
     {
       icon: Phone,
@@ -211,7 +211,7 @@ export default function Contact() {
                 Send Message
               </motion.button>
               <p className="text-sm text-gray-500 text-center">
-                Messages will be sent to: <strong>obazeemmanuel2@gmail.com</strong>
+                Messages will be sent to: <strong>Johnsonernest20@gmail.com</strong>
               </p>
             </form>
           </motion.div>

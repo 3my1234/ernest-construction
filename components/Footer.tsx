@@ -138,8 +138,8 @@ export default function Footer() {
               </li>
               <li className="flex items-start space-x-3 text-sm text-gray-300">
                 <Mail size={18} className="mt-0.5 flex-shrink-0" />
-                <a href="mailto:obazeemmanuel2@gmail.com" className="hover:text-accent transition-colors">
-                  obazeemmanuel2@gmail.com
+                <a href="mailto:Johnsonernest20@gmail.com" className="hover:text-accent transition-colors">
+                  Johnsonernest20@gmail.com
                 </a>
               </li>
             </ul>

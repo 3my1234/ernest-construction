@@ -62,6 +62,27 @@ const projects = [
     image: "/media/WhatsApp Image 2025-10-12 at 08.57.46.jpeg",
     description: "Complete construction solutions",
   },
+  {
+    id: 9,
+    title: "Expert Craftsmanship",
+    category: "Residential",
+    image: "/media/x.jpeg",
+    description: "Showcasing our attention to detail and quality",
+  },
+  {
+    id: 10,
+    title: "Innovative Design",
+    category: "Commercial",
+    image: "/media/xx.jpeg",
+    description: "Modern commercial construction solutions",
+  },
+  {
+    id: 11,
+    title: "Premium Development",
+    category: "Estate Development",
+    image: "/media/xxx.jpeg",
+    description: "High-end estate development and planning",
+  },
 ];
 
 const categories = ["All", "Residential", "Estate Development", "Commercial", "Infrastructure", "Painting"];

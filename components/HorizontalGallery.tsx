@@ -17,8 +17,16 @@ const galleryImages = [
     title: "Modern Design",
   },
   {
+    src: "/media/x.jpeg",
+    title: "Expert Craftsmanship",
+  },
+  {
     src: "/media/WhatsApp Image 2025-10-12 at 08.57.50.jpeg",
     title: "Professional Work",
+  },
+  {
+    src: "/media/xx.jpeg",
+    title: "Innovative Solutions",
   },
   {
     src: "/media/WhatsApp Image 2025-10-12 at 08.57.50(1).jpeg",
@@ -27,6 +35,10 @@ const galleryImages = [
   {
     src: "/media/WhatsApp Image 2025-10-12 at 08.57.51.jpeg",
     title: "Stunning Results",
+  },
+  {
+    src: "/media/xxx.jpeg",
+    title: "Premium Development",
   },
   {
     src: "/media/WhatsApp Image 2025-10-12 at 08.57.52.jpeg",
